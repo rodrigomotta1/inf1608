@@ -38,6 +38,9 @@ void pivotagem(double** A, double* b, int col, int n)
 
 void gauss (int n, double** A, double* b, double* x)
 {
+
+    vet_imprime(n, x);
+
     // Fator para cada eliminação, pivot da coluna e somatório da retro-sub
     double fator, pivot, somatorio;
 
@@ -77,6 +80,7 @@ void gauss (int n, double** A, double* b, double* x)
         for (int j = i + 1; j < n; j++)
         {
             somatorio += A[i][j] * x[j];
+            // printf("\t[%d]\t%.16g\n", i, x[j]);
         }
         
         x[i] = (b[i] - somatorio) / A[i][i];

@@ -28,7 +28,7 @@ double** mat_cria (int m, int n)
         }
     }
 
-    printf("Memoria alocada com sucesso.\n");
+    // printf("Memoria alocada com sucesso.\n");
     return A;
 }
 
@@ -44,7 +44,7 @@ void mat_libera (int m, double** A)
         free(A[i]);
     }
     free(A);
-    printf("Memoria liberada com sucesso\n");
+    // printf("Memoria liberada com sucesso\n");
 
 }
 
@@ -68,6 +68,8 @@ void mat_multv(int m, int n, double** A, double* v, double* w)
         w[i] = 0;
         for (int j = 0; j < n; j++)
         {
+            // printf("\t[%d][%d]\t%.16g\t%.16g\n", i, j, A[i][j], v[j]);
+
             w[i] += A[i][j] * v[j];
         }
     }
