@@ -1,6 +1,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "integral.h"
 
 
 double derivada (int n, double(*f) (double x), double x, double h)
@@ -31,6 +32,7 @@ double simpson(double(*f) (double x), double a, double b, int n)
     double final, sum_fxi = 0, sum_fxim = 0, xi, val;//, total_err;
     
     double h = (b - a)/n;
+
     final = f(a) + f(b);
 
     for (size_t i = 1; i < n; i++)
