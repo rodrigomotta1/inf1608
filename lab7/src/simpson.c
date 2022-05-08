@@ -2,17 +2,17 @@
 #include "simpson.h"
 #include "integral.h"
 #define M_1_SQRT_2_PI 1 / (sqrt(2 * M_PI))
-#define SIMPSON_STEPS 32
+#define MIN_SIMPSON_STEPS 2
 
 
 double adaptsimpson(double a, double b, double (*f) (double x), double tol)
 {
     double m = (a + b) / 2; // Metade do intervalo de integração
 
-    double simpson_total = simpson(f, a, b, SIMPSON_STEPS); // S[a, b]
+    double simpson_total = simpson(f, a, b, MIN_SIMPSON_STEPS); // S[a, b]
 
-    double simpson_mi = simpson(f, a, m, SIMPSON_STEPS); // S[a, m]
-    double simpson_mf = simpson(f, m, b, SIMPSON_STEPS); // S[m, b]
+    double simpson_mi = simpson(f, a, m, MIN_SIMPSON_STEPS); // S[a, m]
+    double simpson_mf = simpson(f, m, b, MIN_SIMPSON_STEPS); // S[m, b]
 
     double soma_metades = simpson_mi + simpson_mf; // S[a, m] + S[m, b]
 

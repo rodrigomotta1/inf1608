@@ -34,6 +34,12 @@ double simpson(double(*f) (double x), double a, double b, int n)
     
     final = f(a) + f(b);
 
+    if (n % 2 != 0 || n < 1)
+    {
+        printf("Quantidade de passos para a Regra de Simpson deve ser um número par maior que 1 (%d foi passado...)\n", n);
+        exit(1);
+    }
+
     for (size_t i = 1; i < n; i++)
     {
         xi = a + (i * h);
