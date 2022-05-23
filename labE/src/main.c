@@ -86,7 +86,7 @@ void test_ajuste()
 
 int main(int argc, char const *argv[])
 {
-    // test_IQI();
+    test_IQI();
     test_ajuste();
     return 0;
 }
